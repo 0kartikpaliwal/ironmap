@@ -5,7 +5,10 @@ from django.db import models
 from django.utils import timezone
 
 
-class Post(models.Model):
-    user = models.CharField(max_length=200)
-    ques = models.ForeignKey('auth.user')
-    ans = models.TextField()
+class Input(models.Model):
+    User = models.CharField(max_length=150)
+    Question = models.TextField()
+
+class TestCase(models.Model):
+    InputS = models.ForeignKey('Input')
+    OutputS = models.ForeignKey('Input')
